@@ -1,22 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+
+const API_URL = process.env.REACT_APP_API_URL;
+const API_PORT = process.env.REACT_APP_API_PORT;
 
 function App() {
+  const [statuses, setStatuses] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API_URL}:${API_PORT}/statuses`)
+      .then(res => res.json())
+      .then(data => setStatuses(data));
+  }, []); 
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App-main">
+        { statuses.map(status => (
+          <h1>{ status.description }</h1>
+        )) }
       </header>
     </div>
   );

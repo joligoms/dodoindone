@@ -1,0 +1,18 @@
+.TaskPanel-container {
+  border-radius: 20px;
+  width: 300px;
+}
+
+.TaskPanel-header {
+  text-align: center;
+  padding: 10px;
+  background-color: #062f42;
+}
+
+.TaskPanel-body {
+  list-style-type: none;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

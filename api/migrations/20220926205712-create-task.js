@@ -14,10 +14,7 @@ module.exports = {
       statusId: {
         type: Sequelize.INTEGER,
         references: {
-          model: {
-            tableName: 'statuses',
-            schema: 'schema'
-          },
+          model: "Statuses",
           key: 'id'
         }
       },

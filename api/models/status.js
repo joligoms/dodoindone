@@ -4,11 +4,10 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Status extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+    static Do = 1;
+    static Doin = 2;
+    static Done = 3;
+
     static associate({ Status, Task}) {
       Status.hasMany(Task);
     }
